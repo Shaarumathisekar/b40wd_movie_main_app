@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { User } from "./User";
+import { Welcome, double } from "./Welcome";
 
+console.log(double(80));
+
+//Component(view + Logic) declaration
 function App() {
+  //const names = ["Shaaru", "Siva", "Mathi"];
+  const users = [
+    {
+      name: "Shaaru",
+      pic: "https://i.pinimg.com/474x/18/42/e0/1842e0a27e99d543826637ea313c2e13.jpg"
+    },
+    {
+      name: "Siva",
+      pic: "https://1fid.com/wp-content/uploads/2022/07/boy-anime-wallpaper-image-for-profile-pic-29-504x1024.jpg"
+    },
+    {
+      name: "Mathi",
+      pic: "https://i.pinimg.com/originals/81/cc/98/81cc981ffe4500e11209a25d650a3596.jpg"
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* {names.map((nm) => (
+        <Welcome name={nm} />
+      ))}  */}
+
+
+      {users.map((usr) => (
+        <User name={usr.name} pic={usr.pic}
+        />
+      ))}
+
+
     </div>
   );
 }
-
 export default App;
